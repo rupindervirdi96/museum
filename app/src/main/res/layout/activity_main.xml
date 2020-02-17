@@ -9,8 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.8"
+        android:layout_height="90dp"
         android:orientation="vertical"
         android:background="@drawable/gradient">
         <LinearLayout
@@ -18,40 +17,58 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="0.5">
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:maxWidth="30dp"
                 android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_menu_black_24dp"
-                android:padding="15sp"/>
+
+
+                />
+</LinearLayout>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:text="MUSEUM"
-                android:paddingHorizontal="30sp"
                 android:gravity="center_vertical"
                 android:textColor="#ddd"
                 android:textSize="20sp"
                 android:fontFamily=""/>
-            <ImageView
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/ic_search_black_24dp"
-                android:padding="15sp"/>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/ic_more_vert_black_24dp"
-                android:padding="15sp"/>
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="30dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_search_black_24dp"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="30dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_more_vert_black_24dp"/>
+            </LinearLayout>
+
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:paddingLeft="50dp"
             android:orientation="horizontal"
             >
             <HorizontalScrollView
@@ -177,29 +194,21 @@
                 android:layout_height="70dp"
                 android:background="#222"
                 />
-
-
-
-
-
-
-
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.1"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:background="@drawable/gradient"
         >
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
-            android:padding="10sp"/>
+            android:src="@drawable/ic_keyboard_arrow_up_black_24dp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -211,10 +220,10 @@
             android:textSize="20sp"/>
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_play_arrow_black_24dp"
-            android:padding="15sp"/>
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_play_arrow_black_24dp"/>
 
         </LinearLayout>
 </LinearLayout>
