@@ -1,29 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:background="@drawable/gradient">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/MUSEUM"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+
+    <LinearLayout
+        android:id="@+id/nav-bar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="vertical"
         android:background="@drawable/gradient"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="LOGIN"
-        android:textSize="60sp"
-        android:textColor="#fff"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_menu_black_24dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="MUSEUM"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_search_black_24dp" />
+            S
+
+            <ImageView
+                android:id="@+id/options"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="35dp">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SONG"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical"
+                    android:textColor="#fff"/><TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="SONG"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:textColor="#fff"/><TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="SONG"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:textColor="#fff"/><TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="SONG"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:textColor="#fff"/>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SONG"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical"
+                    android:textColor="#fff"/>
+
+
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/songs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:paddingLeft="30dp"
+            android:textColor="#fff"
+            android:text="Dhakka" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_play_arrow_black_24dp" />
+    </LinearLayout>
+</LinearLayout>

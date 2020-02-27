@@ -1,229 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:background="#000"
-    tools:context=".MainActivity">
+    android:background="@drawable/background"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:orientation="vertical"
-        android:background="@drawable/gradient">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-<LinearLayout
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:layout_weight="0.5">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxWidth="30dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_menu_black_24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="11"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:hint="Username"
+            android:textColor="#000"
+            android:textSize="20sp"/>
 
-                />
-</LinearLayout>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:text="MUSEUM"
-                android:gravity="center_vertical"
-                android:textColor="#ddd"
-                android:textSize="20sp"
-                android:fontFamily=""/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                >
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="30dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_search_black_24dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="30dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_more_vert_black_24dp"/>
-            </LinearLayout>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="11"
+            android:padding="10dp"
+            android:hint="Password"
+            android:textColor="#000"
+            android:textSize="20sp" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="14"
+            android:textColor="#0C3D44"
+            android:text="Register"
+            android:layout_margin="10dp"
+            android:textSize="15.5sp"/>
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingLeft="50dp"
-            android:orientation="horizontal"
-            >
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="match_parent"
-                    >
-                   <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="dcerfdsera"
-                    android:gravity="center_vertical"
-                    android:textColor="#fff"
-                       android:paddingHorizontal="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="dcerfdsera"
-                        android:gravity="center_vertical"
-                        android:textColor="#fff"
-                        android:paddingHorizontal="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="dcerfdsera"
-                        android:gravity="center_vertical"
-                        android:textColor="#fff"
-                        android:paddingHorizontal="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="dcerfdsera"
-                        android:gravity="center_vertical"
-                        android:textColor="#fff"
-                        android:paddingHorizontal="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="dcerfdsera"
-                        android:gravity="center_vertical"
-                        android:textColor="#fff"
-                        android:paddingHorizontal="20dp"/>
-
-
-
-
-
-                </LinearLayout>
-            </HorizontalScrollView>
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="14"
+            android:background="@drawable/border"
+            android:textSize="15.5sp"
+            android:text="LOGIN"
+            android:textColor="#eee"/>
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"
-                />
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#222"            />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"
-                /><LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#222"
-            /><LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#222"
-            /><LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#222"
-            /><LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#222"
-            /><LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#222"
-            />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#222"
-                />
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@drawable/gradient"
-        >
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:src="@drawable/ic_keyboard_arrow_up_black_24dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4.5"
-            android:paddingLeft="20dp"
-            android:text="Badra Bahaar"
-            android:textColor="#fff"
-            android:gravity="center_vertical"
-            android:textSize="20sp"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_play_arrow_black_24dp"/>
-
-        </LinearLayout>
 </LinearLayout>
