@@ -1,9 +1,42 @@
 package com.example.museum;
 
-public class user {
+import java.io.Serializable;
+
+public class user implements Serializable {
     private String name;
     private String userId;
     private String password;
+    private String email;
+    private String age;
+
+
+    public user(String name, String userId, String password, String email, String age) {
+        this.name = name;
+        this.userId = userId;
+        this.password = password;
+        this.email = email;
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public user(){
+
+    }
 
     public String getName() {
         return name;
@@ -13,11 +46,6 @@ public class user {
         this.name = name;
     }
 
-    public user(String name, String userId, String password) {
-        this.name = name;
-        this.userId = userId;
-        this.password = password;
-    }
 
     public String getUserId() {
         return userId;

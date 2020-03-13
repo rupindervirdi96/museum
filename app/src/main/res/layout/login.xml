@@ -6,59 +6,95 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@drawable/background_main"
     >
-
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/icon"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="@drawable/custom_edit_text"
             android:ems="11"
-            android:padding="10dp"
-            android:layout_margin="10dp"
+            android:padding="14dp"
             android:hint="Username"
+            android:layout_marginVertical="10dp"
             android:textColor="#000"
-            android:textSize="20sp"/>
+            android:textSize="15sp"/>
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="@drawable/custom_edit_text"
             android:ems="11"
-            android:padding="10dp"
+            android:padding="14dp"
             android:hint="Password"
+            android:layout_marginHorizontal="0dp"
+
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="@drawable/custom_edit_text"
-            android:ems="14"
-            android:textColor="#0C3D44"
+            android:ems="20"
+            android:textColor="#0CB6CF"
             android:text="Register"
-            android:layout_margin="10dp"
-            android:textSize="15.5sp"/>
+            android:layout_marginVertical="10dp"
+            android:textSize="14dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ggl"
+                />
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="14"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ems="11"
             android:background="@drawable/border"
-            android:textSize="15.5sp"
+            android:textSize="14sp"
             android:text="LOGIN"
+            android:layout_marginVertical="10dp"
             android:textColor="#eee"/>
     </LinearLayout>
-
+    <LinearLayout
+        android:id="@+id/extraLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        />
 </LinearLayout>

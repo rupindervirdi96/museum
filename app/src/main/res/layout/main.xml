@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/nav-bar"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="85dp"
         android:orientation="vertical"
         android:background="@drawable/gradient"
         >
@@ -20,12 +20,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
 
             <ImageView
                 android:id="@+id/menu"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:padding="5dp"
                 app:srcCompat="@drawable/ic_menu_black_24dp" />
@@ -43,15 +44,15 @@
 
             <ImageView
                 android:id="@+id/search"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:padding="5dp"
                 app:srcCompat="@drawable/ic_search_black_24dp" />
-            S
+
 
             <ImageView
                 android:id="@+id/options"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:padding="5dp"
                 app:srcCompat="@drawable/ic_more_vert_black_24dp" />
@@ -60,13 +61,14 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             >
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingLeft="35dp">
+                android:paddingLeft="53dp">
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
@@ -115,6 +117,32 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" ></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" ></TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" ></TableRow>
+            </TableLayout>
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
