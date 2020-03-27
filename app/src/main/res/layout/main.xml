@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#000"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
 
     <LinearLayout
         android:id="@+id/nav-bar"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:orientation="vertical"
         android:background="@drawable/gradient"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,40 +66,46 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingLeft="53dp">
+
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:text="SONG"
-                    android:textSize="15sp"
                     android:gravity="center_vertical"
-                    android:textColor="#fff"/><TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:text="SONG"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="#fff"/><TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:text="SONG"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="#fff"/><TextView
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:text="SONG"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="#fff"/>
+                    android:text="SONG"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:text="SONG"
-                    android:textSize="15sp"
                     android:gravity="center_vertical"
-                    android:textColor="#fff"/>
+                    android:text="SONG"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
 
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="SONG"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
 
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="SONG"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="SONG"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
 
 
             </LinearLayout>
@@ -119,64 +122,131 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
 
                 <TableRow
+                    android:id="@+id/song"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></TableRow>
+                    android:layout_height="match_parent">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" ></TableRow>
+                    <LinearLayout
+                        android:id="@+id/songTile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" ></TableRow>
+                        <ImageView
+                            android:id="@+id/albumArt"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:padding="10dp"
+                            android:src="@drawable/sample_album_art" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" ></TableRow>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="12dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bottom_border"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/songName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Wakhra Style"
+                                    android:textColor="#fff"
+                                    android:textSize="18dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/artistName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Sidhu MooseWala"
+                                    android:textColor="#777"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/songName" />
+
+                                <TextView
+                                    android:id="@+id/albumName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="UniversePunjabi"
+                                    android:textColor="#777"
+                                    app:layout_constraintLeft_toRightOf="@id/artistName"
+                                    app:layout_constraintTop_toBottomOf="@id/songName" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <ImageView
+                                android:id="@+id/optBtn"
+                                android:layout_width="30dp"
+                                android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:src="@drawable/ic_more_vert_black_24dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </TableRow>
+
             </TableLayout>
         </ScrollView>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/player"
+        android:id="@+id/showPlayer"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@drawable/gradient">
+        android:background="@drawable/gradient"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:padding="15dp"
             android:layout_gravity="center"
+            android:padding="15dp"
             app:srcCompat="@drawable/ic_keyboard_arrow_up_black_24dp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:textSize="25sp"
+            android:layout_weight="1"
             android:paddingLeft="30dp"
+            android:text="Dhakka"
             android:textColor="#fff"
-            android:text="Dhakka" />
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:padding="18dp"
             android:layout_gravity="center"
+            android:padding="18dp"
             app:srcCompat="@drawable/ic_play_arrow_black_24dp" />
     </LinearLayout>
 </LinearLayout>

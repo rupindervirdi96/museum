@@ -94,7 +94,7 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
                 Toast.makeText(this, pswdStored + "-" + password, Toast.LENGTH_SHORT).show();
                 if (password.trim().equals(pswdStored.trim())) {
                     startActivity(mainView);
-                    Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Wrong username or password", Toast.LENGTH_SHORT).show();//checks if the password is correct or not.
                 }
