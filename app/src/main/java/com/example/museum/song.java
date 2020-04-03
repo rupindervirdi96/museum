@@ -1,9 +1,9 @@
 package com.example.museum;
 
 public class song {
-    String Name;
-    String Album;
-    String Artist;
+    private String Name;
+    private String Album;
+    private String Artist;
 
     public song(String name, String album, String artist) {
         Name = name;
@@ -34,6 +34,8 @@ public class song {
     public void setArtist(String artist) {
         Artist = artist;
     }
+
+
 
 
 

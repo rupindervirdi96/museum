@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <group android:id="@+id/sec1">
+            <item android:title="Library"/>
+            <item android:title="Folders"/>
+        </group>
+
+        <group android:id="@+id/sec2">
+            <item android:title="Scan media"/>
+        </group>
+        <group android:id="@+id/sec3">
+            <item android:title="Settings"/>
+            <item android:title="About"/>
+        </group>
+</menu>

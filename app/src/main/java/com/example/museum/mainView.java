@@ -1,95 +1,100 @@
 package com.example.museum;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.io.File;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 
-public class mainView extends AppCompatActivity implements View.OnClickListener {
+public class mainView extends AppCompatActivity implements  View.OnClickListener {
     LinearLayout btnShowPlayer;
-    LinearLayout btnSong;
+//    LinearLayout SongList;
     private ListView listView;
-//    private String songNames[];
-    List<String> songNames = new ArrayList<>();
+    List<song> songNames = new ArrayList<>();
+//    private ViewPager viewPager;
+//    private TabLayout tabLayout;
+//    private androidx.appcompat.widget.Toolbar mToolbar;
+
+//    private Albums albums;
+//    private Artists artists;
+//    private Songs songs;
+//    private Playlists playlists;
+//    private Genres genres;
+//
+//    private DrawerLayout drawerLayout;
+//    private NavigationView navigationView;
+//
 
 
+
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         btnShowPlayer = findViewById(R.id.showPlayer);
         btnShowPlayer.setOnClickListener(this);
-        btnSong = findViewById(R.id.song);
-        btnSong.setOnClickListener(this);
+//        songNames=getAllAudioFromDevice(this);
+//        listView=findViewById(R.id.listAllSongs);
+////        List<String> songs=new ArrayList<>();
+//        for (song x: songNames)
+//        {
+//            songs.add(x.getName());
 //        }
-        getAllAudioFromDevice(this);
+//        ArrayAdapter<String> adapter;
+//        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,songs);
+//        listView.setAdapter(adapter);
+//        albums = new Albums();
+//        artists = new Artists();
+//        songs = new Songs();
+//        playlists = new Playlists();
+//        genres = new Genres();
+//        viewPager = findViewById(R.id.view_pager);
+//        tabLayout= findViewById(R.id.tabs);
+//        tabLayout.setupWithViewPager(viewPager);
+//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 0 );
+//        viewPagerAdapter.addFragment(songs,getString(R.string.tab1));
+//        viewPagerAdapter.addFragment(albums,getString(R.string.tab2));
+//        viewPagerAdapter.addFragment(artists,getString(R.string.tab3));
+//        viewPagerAdapter.addFragment(genres,getString(R.string.tab4));
+//        viewPagerAdapter.addFragment(playlists,getString(R.string.tab5));
+//        viewPager.setAdapter(viewPagerAdapter);
+
+//        mToolbar = findViewById(R.id.main_toolbar);
+//        setSupportActionBar(mToolbar);
+//
+//        drawerLayout = findViewById(R.id.drawer_layout);
+//        navigationView= findViewById(R.id.nav_view);
 
 
-    }
+//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
+//                this,
+//                drawerLayout,
+//                mToolbar,
+//                R.string.openNav,
+//                R.string.closeNav
+//        );
+//
+//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
+//        navigationView.setNavigationItemSelectedListener(this);
 
-//    private ArrayList<File> readSongs(File root) {
-//        ArrayList<File> arrayList = new ArrayList<File>();
-//        File files[] = root.listFiles();
-//        for (File file : files) {
-//            if (file.isDirectory()) {
-//                arrayList.addAll(readSongs(file));
-//            } else {
-//                if (file.getName().endsWith(".mp3")) {
-//                    arrayList.add(file);
-//                }
-//            }
-//        }
-//        return arrayList;
-//    }
+        }
 
+    @SuppressLint("ResourceType")
     public List<song> getAllAudioFromDevice(final Context context) {
         final List<song> tempAudioList = new ArrayList<>();
-
-//        Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-//        String[] projection = {MediaStore.Audio.AudioColumns.DATA,MediaStore.Audio.AudioColumns.TITLE ,MediaStore.Audio.AudioColumns.ALBUM, MediaStore.Audio.ArtistColumns.ARTIST,};
-//        Cursor c = context.getContentResolver().query(uri, projection, MediaStore.Audio.Media.IS_MUSIC + " like ? ", new String[]{"%utm%"}, null);
-
-//        if (c != null) {
-//            while (c.moveToNext()) {
-//                song audioModel = new song();
-//
-//                String path = c.getString(0);   // Retrieve path.
-//                String name = c.getString(1);   // Retrieve name.
-//                String album = c.getString(2);  // Retrieve album name.
-//                String artist = c.getString(3); // Retrieve artist name.
-//
-//                // Set data to the model object.
-//                audioModel.setaName(name);
-//                audioModel.setaAlbum(album);
-//                audioModel.setaArtist(artist);
-//                audioModel.setaPath(path);
-//
-//                Log.e("Name :" + name, " Album :" + album);
-//                Log.e("Path :" + path, " Artist :" + artist);
-//
-//                // Add the model object to the list .
-//                tempAudioList.add(audioModel);
-//            }
-//            c.close();
-//        }
-
         Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         String selection = MediaStore.Audio.Media.IS_MUSIC + "!=0";
         Cursor cursor = context.getContentResolver().query(uri, null, selection, null, null);
@@ -100,15 +105,12 @@ public class mainView extends AppCompatActivity implements View.OnClickListener 
                     String name = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME));
                     String artist = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST));
                     String url = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
-                    song s = new song(name, artist, url);
-                    songNames.add(name);
+                    song s = new song(name.replace(".mp3",""), artist, url);
                     tempAudioList.add(s);
                 } while (cursor.moveToNext());
             }
 
             cursor.close(); }
-
-        // Return the list.
         return tempAudioList;
     }
 
@@ -117,12 +119,52 @@ public class mainView extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
         int btnId = v.getId();
         switch (btnId) {
-            case R.id.song:
-                Toast.makeText(this, ""+songNames.get(0), Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,player.class));
+            case R.id.songTile:
                 break;
             case R.id.showPlayer:
+                startActivity(new Intent(this,player.class));
                 break;
         }
     }
-}
+
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        return false;
+//    }
+
+
+//    private class ViewPagerAdapter extends FragmentPagerAdapter {
+//
+//        private List<Fragment> fragments = new ArrayList<>();
+//        private List<String> titles = new ArrayList<>();
+//
+//
+//        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+//            super(fm, behavior);
+//        }
+//
+//        public void addFragment(Fragment fragment, String title){
+//            fragments.add(fragment);
+//            titles.add(title);
+//        }
+//
+//        @NonNull
+//        @Override
+//        public Fragment getItem(int position) {
+//            return fragments.get(position);
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return fragments.size();
+//        }
+//
+//        @Nullable
+//        @Override
+//        public CharSequence getPageTitle(int position) {
+//            return titles.get(position);
+//        }
+    }
+
+
+

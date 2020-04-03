@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/background_main"
     android:orientation="vertical"
     tools:context=".player">
 
@@ -95,84 +95,17 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+            android:background="@drawable/border"
                     android:stretchColumns="*">
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:id="@+id/songTile"
+                        <fragment
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/albumArt"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:padding="10dp"
-                                android:src="@drawable/sample_album_art" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="12dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/bottom_border"
-                                android:orientation="horizontal"
-                                android:paddingBottom="10dp">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <TextView
-                                        android:id="@+id/songName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="Wakhra Style"
-                                        android:textColor="#fff"
-                                        android:textSize="15dp"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/artistName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="20dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="Sidhu MooseWala"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-
-                                    <TextView
-                                        android:id="@+id/albumName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="UniversePunjabi"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                                <ImageView
-                                    android:id="@+id/optBtn"
-                                    android:layout_width="30dp"
-                                    android:layout_height="50dp"
-                                    android:padding="5dp"
-                                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                            tools:layout="@layout/fragment_song"/>
 
                     </TableRow>
 
@@ -180,78 +113,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:id="@+id/songTile"
+                        <fragment
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/albumArt"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:padding="10dp"
-                                android:src="@drawable/sample_album_art" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="12dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/bottom_border"
-                                android:orientation="horizontal"
-                                android:paddingBottom="10dp">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <TextView
-                                        android:id="@+id/songName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="Wakhra Style"
-                                        android:textColor="#fff"
-                                        android:textSize="15dp"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/artistName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="20dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="Sidhu MooseWala"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-
-                                    <TextView
-                                        android:id="@+id/albumName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="UniversePunjabi"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                                <ImageView
-                                    android:id="@+id/optBtn"
-                                    android:layout_width="30dp"
-                                    android:layout_height="50dp"
-                                    android:padding="5dp"
-                                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                            tools:layout="@layout/fragment_song"/>
 
                     </TableRow>
 
@@ -259,78 +124,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:id="@+id/songTile"
+                        <fragment
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/albumArt"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:padding="10dp"
-                                android:src="@drawable/sample_album_art" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="12dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/bottom_border"
-                                android:orientation="horizontal"
-                                android:paddingBottom="10dp">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <TextView
-                                        android:id="@+id/songName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="Wakhra Style"
-                                        android:textColor="#fff"
-                                        android:textSize="14dp"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/artistName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="20dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="Sidhu MooseWala"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-
-                                    <TextView
-                                        android:id="@+id/albumName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="UniversePunjabi"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                                <ImageView
-                                    android:id="@+id/optBtn"
-                                    android:layout_width="30dp"
-                                    android:layout_height="50dp"
-                                    android:padding="5dp"
-                                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                            tools:layout="@layout/fragment_song"/>
 
                     </TableRow>
 
@@ -338,78 +135,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:id="@+id/songTile"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/albumArt"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:padding="10dp"
-                                android:src="@drawable/sample_album_art" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="12dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/bottom_border"
-                                android:orientation="horizontal"
-                                android:paddingBottom="10dp">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-
-                                    <TextView
-                                        android:id="@+id/songName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:text="Wakhra Style"
-                                        android:textColor="#fff"
-                                        android:textSize="14dp"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/artistName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="20dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="Sidhu MooseWala"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toLeftOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-
-                                    <TextView
-                                        android:id="@+id/albumName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginTop="2dp"
-                                        android:text="UniversePunjabi"
-                                        android:textColor="#777"
-                                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                                        app:layout_constraintTop_toBottomOf="@id/songName" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                                <ImageView
-                                    android:id="@+id/optBtn"
-                                    android:layout_width="30dp"
-                                    android:layout_height="50dp"
-                                    android:padding="5dp"
-                                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                       <fragment
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           tools:layout="@layout/fragment_song"/>
 
                     </TableRow>
 

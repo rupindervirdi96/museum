@@ -1,21 +1,16 @@
 package com.example.museum;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,16 +18,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class login extends AppCompatActivity implements View.OnClickListener, ValueEventListener, Serializable {
+    private static final int APP_INTRO_REQUEST = 100;
     Button regBtn, logBtn;
     EditText userId, pswd;
     DatabaseReference museumDB;
     Boolean loggedInUId;
     user u;
     String id, password;
-    Intent mainView,register;
     String process;
 
 
@@ -47,9 +41,14 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
         userId = findViewById(R.id.username);
         pswd = findViewById(R.id.password);
         museumDB = FirebaseDatabase.getInstance().getReference();
-        mainView = new Intent(this, mainView.class);
-        register=new Intent(this,register.class);
-        loggedInUId=true;
+        loggedInUId = true;
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+        if (isFirstRun) {
+            checkShowIntro();
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isFirstRun", false).commit();
+
     }
 
     @Override
@@ -60,12 +59,12 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
 
         switch (btnId) {
             case R.id.btnLogin:
-                process="login";
+                process = "login";
                 DatabaseReference musDB = FirebaseDatabase.getInstance().getReference().child("users").child(id);
                 musDB.addValueEventListener(this);
                 break;
             case R.id.btnRegister:
-                process="register";
+                process = "register";
                 Register();
                 break;
         }
@@ -85,38 +84,42 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
 
     @Override
     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-        if(process.equals("login")) {
+        if (process.equals("login")) {
             try {
                 id = dataSnapshot.child("userId").getValue().toString();
                 password = pswd.getText().toString();
                 String pswdStored = dataSnapshot.child("password").getValue().toString();
                 String username = dataSnapshot.child("name").getValue().toString();
-                Toast.makeText(this, pswdStored + "-" + password, Toast.LENGTH_SHORT).show();
                 if (password.trim().equals(pswdStored.trim())) {
-                    startActivity(mainView);
-//                    Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this,mainView.class));
                 } else {
                     Toast.makeText(this, "Wrong username or password", Toast.LENGTH_SHORT).show();//checks if the password is correct or not.
                 }
-
-
             } catch (Exception e) {
-                Toast.makeText(this, "Wrong Username or password", Toast.LENGTH_SHORT);//checks if the id does not exist.
+                Toast.makeText(this, "Wrong Username or password", Toast.LENGTH_SHORT).show();//checks if the id does not exist.
 
             }
         }
-        if(process.equals("register")){
-            if(dataSnapshot.exists() && loggedInUId)
-            {   userId.setText(null);
-                Toast.makeText(this, "Username not available.", Toast.LENGTH_SHORT).show();
+        if (process.equals("register")) {
+            if (dataSnapshot.exists() && loggedInUId) {
+                userId.setText(null);
+                pswd.setText(null);
+                Toast.makeText(this, "Username already taken.", Toast.LENGTH_SHORT).show();
+            } else {
                 loggedInUId=false;
-            }
-            else{
-                id=userId.getText().toString();
+                id = userId.getText().toString();
                 password = pswd.getText().toString();
-                u=new user("name",id,password,"email","age");
-                register.putExtra("user",u);
+                u = new user("name", id, password, "email", "age");
+                Intent register=new Intent(this, register.class);
+                register.putExtra("user", u);
+                if(dataSnapshot.exists()){
+                    startActivity(new Intent(this,mainView.class));
+                    loggedInUId=true;
+                }
+                else{
                 startActivity(register);
+                }
             }
             return;
         }
@@ -126,4 +129,9 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
     public void onCancelled(@NonNull DatabaseError databaseError) {
         Toast.makeText(this, "DB ERROR", Toast.LENGTH_SHORT).show();
     }
+
+    private void checkShowIntro() {
+        new Handler().postDelayed(() -> startActivityForResult(new Intent(login.this, AppIntroActivity.class), APP_INTRO_REQUEST), 50);
+    }
+
 }
