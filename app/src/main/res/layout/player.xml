@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main"
+    android:background="@drawable/gradient2"
     android:orientation="vertical"
     tools:context=".player">
 
@@ -29,18 +29,18 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
-<SeekBar
-    android:layout_width="match_parent"
-    android:layout_height="5dp"
-    android:background="#000"
-    />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#000" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal"
             android:gravity="center"
-            android:paddingHorizontal="50dp"
-            >
+            android:orientation="horizontal"
+            android:paddingHorizontal="50dp">
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -58,7 +58,7 @@
                 android:src="@drawable/ic_skip_previous_black_24dp" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/playButton"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:padding="10dp"
@@ -83,8 +83,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="40dp"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ScrollView
@@ -95,50 +95,39 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-            android:background="@drawable/border"
+                    android:background="@drawable/border"
                     android:stretchColumns="*">
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <fragment
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:layout="@layout/fragment_song"/>
-
+                        <include layout="@layout/fragment_song" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <fragment
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:layout="@layout/fragment_song"/>
-
+                        <include layout="@layout/fragment_song" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <fragment
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:layout="@layout/fragment_song"/>
-
+                        <include layout="@layout/fragment_song" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                       <fragment
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           tools:layout="@layout/fragment_song"/>
+                        <include layout="@layout/fragment_song" />
+                        <!--                       <fragment-->
+                        <!--                           android:layout_width="match_parent"-->
+                        <!--                           android:layout_height="match_parent"-->
+                        <!--                           tools:layout="@layout/fragment_song"/>-->
 
                     </TableRow>
 

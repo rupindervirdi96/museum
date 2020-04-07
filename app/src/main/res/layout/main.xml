@@ -69,61 +69,35 @@
                 app:srcCompat="@drawable/ic_more_vert_black_24dp" />
         </LinearLayout>
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
 
-            >
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingLeft="53dp">
+                android:paddingLeft="55dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:text="SONGS"
                     android:textColor="#fff"
                     android:textSize="15sp" />
 
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="ALBUMS"
-                    android:textColor="#fff"
-                    android:textSize="15sp" />
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
+                    android:gravity="center_vertical"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:text="PLAYLISTS"
                     android:textColor="#fff"
                     android:textSize="15sp" />
 
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="GENRE"
-                    android:textColor="#fff"
-                    android:textSize="15sp" />
 
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="ARTIST"
-                    android:textColor="#fff"
-                    android:textSize="15sp" />
 
 
             </LinearLayout>
-        </HorizontalScrollView>
 
     </LinearLayout>
 
@@ -140,366 +114,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#444"
+        android:background="#eee"
         android:padding="10dp"
         android:orientation="vertical">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/songTile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <ImageView
-                android:id="@+id/albumArt"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="10dp"
-                android:src="@drawable/sample_album_art" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/bottom_border"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/songName"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fire in the Rain"
-                        android:textColor="#fff"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/artistName"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/songName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Adele"
-                        android:textColor="#777" />
-
-                    <TextView
-                        android:id="@+id/albumName"
-                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                        app:layout_constraintTop_toBottomOf="@id/songName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Royal"
-                        android:textColor="#777" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <ImageView
-                    android:id="@+id/optBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="50dp"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/songTile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <ImageView
-                android:id="@+id/albumArt"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="10dp"
-                android:src="@drawable/sample_album_art" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/bottom_border"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/songName"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fire in the Rain"
-                        android:textColor="#fff"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/artistName"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/songName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Adele"
-                        android:textColor="#777" />
-
-                    <TextView
-                        android:id="@+id/albumName"
-                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                        app:layout_constraintTop_toBottomOf="@id/songName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Royal"
-                        android:textColor="#777" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <ImageView
-                    android:id="@+id/optBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="50dp"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/songTile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <ImageView
-                android:id="@+id/albumArt"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="10dp"
-                android:src="@drawable/sample_album_art" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/bottom_border"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/songName"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fire in the Rain"
-                        android:textColor="#fff"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/artistName"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/songName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Adele"
-                        android:textColor="#777" />
-
-                    <TextView
-                        android:id="@+id/albumName"
-                        app:layout_constraintLeft_toRightOf="@id/artistName"
-                        app:layout_constraintTop_toBottomOf="@id/songName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="2dp"
-                        android:text="Royal"
-                        android:textColor="#777" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <ImageView
-                    android:id="@+id/optBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="50dp"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_more_vert_black_24dp" />
-
-            </LinearLayout>
-
-        </LinearLayout><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/songTile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <ImageView
-            android:id="@+id/albumArt"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:padding="10dp"
-            android:src="@drawable/sample_album_art" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/bottom_border"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:id="@+id/songName"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fire in the Rain"
-                    android:textColor="#fff"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:id="@+id/artistName"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/songName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Adele"
-                    android:textColor="#777" />
-
-                <TextView
-                    android:id="@+id/albumName"
-                    app:layout_constraintLeft_toRightOf="@id/artistName"
-                    app:layout_constraintTop_toBottomOf="@id/songName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Royal"
-                    android:textColor="#777" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <ImageView
-                android:id="@+id/optBtn"
-                android:layout_width="30dp"
-                android:layout_height="50dp"
-                android:padding="5dp"
-                android:src="@drawable/ic_more_vert_black_24dp" />
-
-        </LinearLayout>
-
-    </LinearLayout><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/songTile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <ImageView
-            android:id="@+id/albumArt"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:padding="10dp"
-            android:src="@drawable/sample_album_art" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/bottom_border"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:id="@+id/songName"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fire in the Rain"
-                    android:textColor="#fff"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:id="@+id/artistName"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/songName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Adele"
-                    android:textColor="#777" />
-
-                <TextView
-                    android:id="@+id/albumName"
-                    app:layout_constraintLeft_toRightOf="@id/artistName"
-                    app:layout_constraintTop_toBottomOf="@id/songName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Royal"
-                    android:textColor="#777" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <ImageView
-                android:id="@+id/optBtn"
-                android:layout_width="30dp"
-                android:layout_height="50dp"
-                android:padding="5dp"
-                android:src="@drawable/ic_more_vert_black_24dp" />
-
-        </LinearLayout>
+                <ListView
+                    android:id="@+id/listAllSongs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
     </LinearLayout>
 
@@ -507,21 +129,18 @@
 
 
 
-        <!--        <ListView-->
-        <!--            android:id="@+id/listAllSongs"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"/>-->
+
+
 
         <!--            </LinearLayout>-->
 
         <!--        </ScrollView>-->
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/showPlayer"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/background_main"
+        android:background="@drawable/gradient2"
         android:orientation="horizontal">
 
         <ImageView

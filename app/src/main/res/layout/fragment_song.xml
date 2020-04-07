@@ -31,12 +31,12 @@
 
             <TextView
                 android:id="@+id/songName"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fire in the Rain"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="18dp" />
 
             <TextView

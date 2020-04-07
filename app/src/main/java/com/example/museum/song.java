@@ -1,14 +1,16 @@
 package com.example.museum;
 
-public class song {
+import java.io.Serializable;
+
+public class song implements Serializable {
     private String Name;
     private String Album;
-    private String Artist;
+    private String Url;
 
-    public song(String name, String album, String artist) {
+    public song(String name, String album, String url) {
         Name = name;
         Album = album;
-        Artist = artist;
+        Url = url;
     }
 
     public String getName() {
@@ -27,12 +29,12 @@ public class song {
         Album = album;
     }
 
-    public String getArtist() {
-        return Artist;
+    public String getUrl() {
+        return Url;
     }
 
-    public void setArtist(String artist) {
-        Artist = artist;
+    public void setUrl(String artist) {
+        Url = artist;
     }
 
 

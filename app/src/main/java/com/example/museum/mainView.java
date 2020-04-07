@@ -4,12 +4,16 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,10 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class mainView extends AppCompatActivity implements  View.OnClickListener {
+public class mainView extends AppCompatActivity implements  View.OnClickListener, AdapterView.OnItemClickListener {
     LinearLayout btnShowPlayer;
 //    LinearLayout SongList;
     private ListView listView;
+    MediaPlayer mp;
     List<song> songNames = new ArrayList<>();
 //    private ViewPager viewPager;
 //    private TabLayout tabLayout;
@@ -45,16 +50,23 @@ public class mainView extends AppCompatActivity implements  View.OnClickListener
         setContentView(R.layout.main);
         btnShowPlayer = findViewById(R.id.showPlayer);
         btnShowPlayer.setOnClickListener(this);
-//        songNames=getAllAudioFromDevice(this);
-//        listView=findViewById(R.id.listAllSongs);
-////        List<String> songs=new ArrayList<>();
-//        for (song x: songNames)
-//        {
-//            songs.add(x.getName());
-//        }
-//        ArrayAdapter<String> adapter;
-//        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,songs);
-//        listView.setAdapter(adapter);
+        songNames=getAllAudioFromDevice(this);
+        listView=findViewById(R.id.listAllSongs);
+        listView.setOnItemClickListener(this);
+        List<String> songs=new ArrayList<>();
+        List<String> albums=new ArrayList<>();
+        for (song x: songNames)
+        {
+            songs.add(x.getName()
+            );
+            albums.add(x.getAlbum());
+        }
+        ArrayAdapter<String> adapter;
+        ArrayAdapter<String> adapter2;
+        adapter=new ArrayAdapter<String>(this,R.layout.fragment_song,R.id.songName,songs);
+//        adapter2=new ArrayAdapter<String>(this,R.layout.fragment_song,R.id.albumName,albums);
+        listView.setAdapter(adapter);
+//        listView.setAdapter(adapter2);
 //        albums = new Albums();
 //        artists = new Artists();
 //        songs = new Songs();
@@ -89,7 +101,6 @@ public class mainView extends AppCompatActivity implements  View.OnClickListener
 //        drawerLayout.addDrawerListener(actionBarDrawerToggle);
 //        actionBarDrawerToggle.syncState();
 //        navigationView.setNavigationItemSelectedListener(this);
-
         }
 
     @SuppressLint("ResourceType")
@@ -109,7 +120,6 @@ public class mainView extends AppCompatActivity implements  View.OnClickListener
                     tempAudioList.add(s);
                 } while (cursor.moveToNext());
             }
-
             cursor.close(); }
         return tempAudioList;
     }
@@ -122,9 +132,19 @@ public class mainView extends AppCompatActivity implements  View.OnClickListener
             case R.id.songTile:
                 break;
             case R.id.showPlayer:
-                startActivity(new Intent(this,player.class));
+//                startActivity(new Intent(this,player.class));
+
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent i = new Intent(this,player.class);
+        String url=songNames.get(position).getUrl();
+        Toast.makeText(this, url, Toast.LENGTH_SHORT).show();
+        i.putExtra("song",url);
+        startActivity(i);
     }
 
 //    @Override
