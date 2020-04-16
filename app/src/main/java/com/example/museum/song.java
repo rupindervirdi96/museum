@@ -6,11 +6,21 @@ public class song implements Serializable {
     private String Name;
     private String Album;
     private String Url;
+    private String AlbumArt;
+
+    public String getAlbumArt() {
+        return AlbumArt;
+    }
+
+    public void setAlbumArt(String albumArt) {
+        AlbumArt = albumArt;
+    }
 
     public song(String name, String album, String url) {
         Name = name;
         Album = album;
         Url = url;
+
     }
 
     public String getName() {

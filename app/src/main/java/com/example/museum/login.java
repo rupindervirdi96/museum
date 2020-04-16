@@ -34,6 +34,7 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        Toast.makeText(this, "INTERNET CONNECTION REQUIRED", Toast.LENGTH_SHORT).show();
         regBtn = findViewById(R.id.btnRegister);
         regBtn.setOnClickListener(this);
         logBtn = findViewById(R.id.btnLogin);
@@ -48,7 +49,7 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
             checkShowIntro();
         }
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit().putBoolean("isFirstRun", false).commit();
-
+        getSupportActionBar().hide();
     }
 
     @Override
@@ -67,6 +68,7 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
                 process = "register";
                 Register();
                 break;
+
         }
     }
 
@@ -92,7 +94,7 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
                 String username = dataSnapshot.child("name").getValue().toString();
                 if (password.trim().equals(pswdStored.trim())) {
                     Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this,mainView.class));
+                    startActivity(new Intent(this,mainView.class).putExtra("CurrUser",username));
                 } else {
                     Toast.makeText(this, "Wrong username or password", Toast.LENGTH_SHORT).show();//checks if the password is correct or not.
                 }
@@ -114,7 +116,8 @@ public class login extends AppCompatActivity implements View.OnClickListener, Va
                 Intent register=new Intent(this, register.class);
                 register.putExtra("user", u);
                 if(dataSnapshot.exists()){
-                    startActivity(new Intent(this,mainView.class));
+
+                    startActivity(new Intent(this,mainView.class).putExtra("CurrUser",u.getName()));
                     loggedInUId=true;
                 }
                 else{

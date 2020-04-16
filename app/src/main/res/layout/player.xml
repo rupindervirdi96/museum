@@ -12,12 +12,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:orientation="vertical">
-        <!--        android:background="@drawable/bottom_border"-->
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/albumArt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="30dp"
@@ -30,10 +29,27 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
+
+
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="#fff"
+            />
+
         <SeekBar
+            android:id="@+id/seekbar"
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:background="#000" />
+            style="@style/PowerSeekBar"
+            android:layout_marginHorizontal="20dp"
+            android:progress="0"
+            android:thumb="@drawable/thumb"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,19 +58,14 @@
             android:orientation="horizontal"
             android:paddingHorizontal="50dp">
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="10dp"
-                android:src="@drawable/ic_loop_black_24dp" />
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/prevbtn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="40dp"
-                android:padding="10dp"
+                android:layout_marginRight="40dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_skip_previous_black_24dp" />
 
             <ImageView
@@ -62,78 +73,24 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:padding="10dp"
-                android:src="@drawable/ic_play_circle_filled_black_24dp" />
+                android:src="@drawable/ic_play_arrow_black_24dp" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/nextBtn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="40dp"
-                android:padding="10dp"
+                android:layout_marginLeft="40dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_skip_next_black_24dp" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="10dp"
-                android:src="@drawable/ic_shuffle_black_24dp" />
         </LinearLayout>
+        <ImageView
+            android:id="@+id/addToPlaylist"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add_circle_black_24dp"
+            android:layout_gravity="center"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="40dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:stretchColumns="*">
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <include layout="@layout/fragment_song" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <include layout="@layout/fragment_song" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <include layout="@layout/fragment_song" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <include layout="@layout/fragment_song" />
-                        <!--                       <fragment-->
-                        <!--                           android:layout_width="match_parent"-->
-                        <!--                           android:layout_height="match_parent"-->
-                        <!--                           tools:layout="@layout/fragment_song"/>-->
-
-                    </TableRow>
-
-                </TableLayout>
-
-            </ScrollView>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -9,9 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="209dp"
-        tools:listitem="@layout/fragment_song">
-
+        tools:layout_editor_absoluteY="209dp">
 
     </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

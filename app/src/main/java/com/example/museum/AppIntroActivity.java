@@ -1,10 +1,9 @@
 package com.example.museum;
 
+import android.os.Bundle;
+
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
-import com.example.museum.R;
-
-import android.os.Bundle;
 
 //
 public class AppIntroActivity extends IntroActivity {
@@ -12,7 +11,7 @@ public class AppIntroActivity extends IntroActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().hide();
         setButtonCtaVisible(true);
         setButtonNextVisible(false);
         setButtonBackVisible(false);

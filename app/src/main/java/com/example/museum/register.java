@@ -1,14 +1,14 @@
 package com.example.museum;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class register extends AppCompatActivity implements View.OnClickListener, ValueEventListener, Serializable {
     Button btnFinish, btnBack;
@@ -39,6 +38,7 @@ public class register extends AppCompatActivity implements View.OnClickListener,
         btnFinish.setOnClickListener(this);
         btnBack.setOnClickListener(this);
         main = new Intent(this, mainView.class);
+        getSupportActionBar().hide();
     }
 
     @Override

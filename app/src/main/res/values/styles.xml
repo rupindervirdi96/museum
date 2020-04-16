@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#005867</item>
-        <item name="colorPrimaryDark">#005867</item>
+        <item name="colorPrimary">#0336ff</item>
+        <item name="colorPrimaryDark">#0336ff</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="editText">
@@ -16,6 +16,10 @@
         <item name="android:layout_height">?android:attr/actionBarSize</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="android:transitionName" tools:ignore="NewApi">toolbar</item>
+    </style>
+    <style name="PowerSeekBar"  parent="android:Widget.SeekBar">
+        <item name="android:progressDrawable">@drawable/seek</item>
+        <item name="android:thumbOffset">0dip</item>
     </style>
 
 </resources>
